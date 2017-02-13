@@ -12,6 +12,7 @@
 		C91DD3581E503C8000D58071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91DD3561E503C8000D58071 /* Main.storyboard */; };
 		C91DD35A1E503C8100D58071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91DD3591E503C8100D58071 /* Assets.xcassets */; };
 		C91DD35D1E503C8100D58071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91DD35B1E503C8100D58071 /* LaunchScreen.storyboard */; };
+		C91DD3711E50768A00D58071 /* SimpleGraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DD3701E50768A00D58071 /* SimpleGraphs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C91DD3591E503C8100D58071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C91DD35C1E503C8100D58071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C91DD35E1E503C8100D58071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C91DD3701E50768A00D58071 /* SimpleGraphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleGraphs.swift; path = ../SimpleGraphs/SimpleGraphs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		C91DD3461E503C8000D58071 = {
 			isa = PBXGroup;
 			children = (
+				C91DD36F1E50765D00D58071 /* SimpleGraphs */,
 				C91DD3511E503C8000D58071 /* Demo */,
 				C91DD3501E503C8000D58071 /* Products */,
 			);
@@ -62,6 +65,14 @@
 				C91DD35E1E503C8100D58071 /* Info.plist */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		C91DD36F1E50765D00D58071 /* SimpleGraphs */ = {
+			isa = PBXGroup;
+			children = (
+				C91DD3701E50768A00D58071 /* SimpleGraphs.swift */,
+			);
+			name = SimpleGraphs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91DD3711E50768A00D58071 /* SimpleGraphs.swift in Sources */,
 				C91DD3551E503C8000D58071 /* ViewController.swift in Sources */,
 				C91DD3531E503C8000D58071 /* AppDelegate.swift in Sources */,
 			);
@@ -300,6 +312,7 @@
 				C91DD3631E503C8100D58071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
