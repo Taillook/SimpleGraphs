@@ -16,13 +16,26 @@ open class LineGraph: UIView{
     open var circleWidth: CGFloat = 4
     open var circleColor: UIColor = UIColor.green
     open var xData: [Any] = [1,2,3,4,5,6,7,8,9,10,11,12]
-    open var yData: [CGFloat] = [1,2,3,4,5,6,7,8,9,10,11,12]
+    open var yData: [CGFloat] = [1,2,3,4,5,6,7,8,9,10,11,12] {
+        didSet {
+            //ViewHeight match yData
+            for i in yData {
+                plotY.append(i * yMaxViewMaxDifference)
+            }
+        }
+    }
     open var plotY: [CGFloat] = []
     open var scaleMargin: CGFloat = 10
     open var graphWidth: CGFloat = 300
     open var graphHeight: CGFloat = 300
     
-    
+    override public init(frame: CGRect){
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.white
+        self.scaleMargin = frame.width/CGFloat(xData.count-1)
+        self.layer.borderColor = UIColor.hex(hexStr: "#DCDCDC", alpha: 1).cgColor
+        self.layer.borderWidth = 1
+    }
     
     convenience init(frame: CGRect, xData: [Any], yData: [CGFloat]) {
         self.init(frame: frame)
@@ -32,8 +45,15 @@ open class LineGraph: UIView{
         self.scaleMargin = frame.width/CGFloat(xData.count-1)
         self.layer.borderColor = UIColor.hex(hexStr: "#DCDCDC", alpha: 1).cgColor
         self.layer.borderWidth = 1
-        
         setUp()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.white
+        self.scaleMargin = frame.width/CGFloat(xData.count-1)
+        self.layer.borderColor = UIColor.hex(hexStr: "#DCDCDC", alpha: 1).cgColor
+        self.layer.borderWidth = 1
     }
     
     func setUp(){
@@ -41,8 +61,6 @@ open class LineGraph: UIView{
         for i in yData {
             plotY.append(i * yMaxViewMaxDifference)
         }
-        
-        self.transform = CGAffineTransform(scaleX: 1, y: -1)
     }
     
     override open func draw(_ rect: CGRect) {
@@ -106,6 +124,7 @@ open class LineGraph: UIView{
             }
         }
         
+        self.transform = CGAffineTransform(scaleX: 1, y: -1)
     }
     
     var yMaxViewMaxDifference: CGFloat {
