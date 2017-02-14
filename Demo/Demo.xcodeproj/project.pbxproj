@@ -13,6 +13,7 @@
 		C91DD35A1E503C8100D58071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91DD3591E503C8100D58071 /* Assets.xcassets */; };
 		C91DD35D1E503C8100D58071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C91DD35B1E503C8100D58071 /* LaunchScreen.storyboard */; };
 		C91DD3711E50768A00D58071 /* SimpleGraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DD3701E50768A00D58071 /* SimpleGraphs.swift */; };
+		C97864F71E52DB820056DEA6 /* CustomUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97864F61E52DB820056DEA6 /* CustomUIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C91DD35C1E503C8100D58071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C91DD35E1E503C8100D58071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C91DD3701E50768A00D58071 /* SimpleGraphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleGraphs.swift; path = ../SimpleGraphs/SimpleGraphs.swift; sourceTree = "<group>"; };
+		C97864F61E52DB820056DEA6 /* CustomUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomUIColor.swift; path = ../SimpleGraphs/CustomUIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				C91DD3701E50768A00D58071 /* SimpleGraphs.swift */,
+				C97864F61E52DB820056DEA6 /* CustomUIColor.swift */,
 			);
 			name = SimpleGraphs;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				C91DD3711E50768A00D58071 /* SimpleGraphs.swift in Sources */,
 				C91DD3551E503C8000D58071 /* ViewController.swift in Sources */,
+				C97864F71E52DB820056DEA6 /* CustomUIColor.swift in Sources */,
 				C91DD3531E503C8000D58071 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

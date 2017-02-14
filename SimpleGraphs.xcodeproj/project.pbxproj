@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C91DD33E1E50350700D58071 /* SimpleGraphs.h in Headers */ = {isa = PBXBuildFile; fileRef = C91DD33C1E50350700D58071 /* SimpleGraphs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C91DD3451E503B0F00D58071 /* SimpleGraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DD3441E503B0F00D58071 /* SimpleGraphs.swift */; };
+		C97864F51E52DB6D0056DEA6 /* CustomUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97864F41E52DB6D0056DEA6 /* CustomUIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		C91DD33C1E50350700D58071 /* SimpleGraphs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleGraphs.h; sourceTree = "<group>"; };
 		C91DD33D1E50350700D58071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C91DD3441E503B0F00D58071 /* SimpleGraphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleGraphs.swift; sourceTree = "<group>"; };
+		C97864F41E52DB6D0056DEA6 /* CustomUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 				C91DD33C1E50350700D58071 /* SimpleGraphs.h */,
 				C91DD33D1E50350700D58071 /* Info.plist */,
 				C91DD3441E503B0F00D58071 /* SimpleGraphs.swift */,
+				C97864F41E52DB6D0056DEA6 /* CustomUIColor.swift */,
 			);
 			path = SimpleGraphs;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97864F51E52DB6D0056DEA6 /* CustomUIColor.swift in Sources */,
 				C91DD3451E503B0F00D58071 /* SimpleGraphs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +306,7 @@
 				C91DD3431E50350700D58071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
