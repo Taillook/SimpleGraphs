@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 
 open class LineGraph: UIView{
-    var isDrawGrid: Bool = true
-    var lineWidth: CGFloat = 3
-    var lineColor: UIColor = UIColor.hex(hexStr: "#007000", alpha: 1)
-    var circleWidth: CGFloat = 4
-    var circleColor: UIColor = UIColor.green
-    var xData: [Any] = [1,2,3,4,5,6,7,8,9,10,11,12]
-    var yData: [CGFloat] = [1,2,3,4,5,6,7,8,9,10,11,12]
-    var plotY: [CGFloat] = []
-    var scaleMargin: CGFloat = 10
-    var graphWidth: CGFloat = 300
-    var graphHeight: CGFloat = 300
+    open var isDrawGrid: Bool = true
+    open var lineWidth: CGFloat = 3
+    open var lineColor: UIColor = UIColor.hex(hexStr: "#007000", alpha: 1)
+    open var circleWidth: CGFloat = 4
+    open var circleColor: UIColor = UIColor.green
+    open var xData: [Any] = [1,2,3,4,5,6,7,8,9,10,11,12]
+    open var yData: [CGFloat] = [1,2,3,4,5,6,7,8,9,10,11,12]
+    open var plotY: [CGFloat] = []
+    open var scaleMargin: CGFloat = 10
+    open var graphWidth: CGFloat = 300
+    open var graphHeight: CGFloat = 300
     
     
     
