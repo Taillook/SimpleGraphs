@@ -10,12 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var graph: LineGraph!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let Graph = LineGraph(frame: CGRect(x: 20, y: 20, width: 300, height: 150), xData: [1,2,3,4,5], yData: [5,2,6,1,9])
-        self.view.addSubview(Graph)
-        
+        graph.xData = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D"]
+        graph.yData = [0,10,20,30,20,10,5,5,5,5,1,2,3,4,5,6,7,8,9,10,20,21,22,23,24,25,26,27,28,29]
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +23,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-

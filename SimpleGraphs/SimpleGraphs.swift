@@ -11,10 +11,13 @@ import UIKit
 
 open class LineGraph: UIView{
     open var isDrawGrid: Bool = true
+    open var isDrawCircle: Bool = true
     open var lineWidth: CGFloat = 3
     open var lineColor: UIColor = UIColor.hex(hexStr: "#007000", alpha: 1)
     open var circleWidth: CGFloat = 4
-    open var circleColor: UIColor = UIColor.green
+    open var circleStrokeColor: UIColor = UIColor.hex(hexStr: "#F0F000", alpha: 1)
+    open var circleColor: UIColor = UIColor.hex(hexStr: "#007000", alpha: 1)
+    open var circleLineWidth: CGFloat = 1
     open var xData: [Any] = [1,2,3,4,5,6,7,8,9,10,11,12]
     open var yData: [CGFloat] = [1,2,3,4,5,6,7,8,9,10,11,12]
     open var plotY: [CGFloat] = []
@@ -22,41 +25,41 @@ open class LineGraph: UIView{
     open var graphWidth: CGFloat = 300
     open var graphHeight: CGFloat = 300
     
-    override public init(frame: CGRect){
+    override public init(frame: CGRect) {
         super.init(frame: frame)
-    }
-    
-    convenience init(frame: CGRect, xData: [Any], yData: [CGFloat]) {
-        self.init(frame: frame)
-        self.xData = xData
-        self.yData = yData
-        self.backgroundColor = UIColor.white
-        self.scaleMargin = frame.width/CGFloat(xData.count-1)
-        self.layer.borderColor = UIColor.hex(hexStr: "#DCDCDC", alpha: 1).cgColor
-        self.layer.borderWidth = 1
-        setUp()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    open func setUp(){
-        self.backgroundColor = UIColor.white
-        self.scaleMargin = frame.width/CGFloat(xData.count-1)
-        self.layer.borderColor = UIColor.hex(hexStr: "#DCDCDC", alpha: 1).cgColor
-        self.layer.borderWidth = 1
-        //ViewHeight match yData
-        for i in yData {
-            plotY.append(i * yMaxViewMaxDifference)
-        }
-        self.transform = CGAffineTransform(scaleX: 1, y: -1)
+    convenience init(frame: CGRect, xData: [Any], yData: [CGFloat]) {
+        self.init(frame: frame)
+        self.xData = xData
+        self.yData = yData
     }
     
     override open func draw(_ rect: CGRect) {
+        self.layer.borderColor = UIColor.hex(hexStr: "#DCDCDC", alpha: 1).cgColor
+        self.layer.borderWidth = 1
+        self.scaleMargin = frame.width/CGFloat(xData.count-1)
+        //ViewHeight match yData and Data reversal
+        for i in yData {
+            plotY.append(frame.height - i * yMaxViewMaxDifference)
+        }
+        
         if isDrawGrid {
             drawGrid()
         }
+        
+        drawLine()
+        
+        if isDrawCircle {
+            drawCircle()
+        }
+    }
+    
+    func drawLine() {
         let line: UIBezierPath = UIBezierPath()
         for (index, i) in plotY.enumerated() {
             if index == 0 {
@@ -70,7 +73,7 @@ open class LineGraph: UIView{
         line.stroke()
     }
     
-    func drawGrid(){
+    func drawGrid() {
         let dashes:[CGFloat] = [1,2]
         let line: UIBezierPath = UIBezierPath()
         
@@ -116,8 +119,31 @@ open class LineGraph: UIView{
         
     }
     
+    func drawCircle() {
+        for (index, i) in plotY.enumerated() {
+            if index == 0 {
+                let circle: UIBezierPath = UIBezierPath(arcCenter: CGPoint(x: CGFloat(index) * scaleMargin, y: i),radius: circleWidth,startAngle: 0.0,endAngle: CGFloat(M_PI*2), clockwise: false)
+                circleStrokeColor.setStroke()
+                circleColor.setFill()
+                circle.fill()
+                circle.lineWidth = circleLineWidth
+                circle.stroke()
+                
+                
+            }else {
+                let circle: UIBezierPath = UIBezierPath(arcCenter: CGPoint(x: CGFloat(index) * scaleMargin, y: i),radius: circleWidth,startAngle: 0.0,endAngle: CGFloat(M_PI*2), clockwise: false)
+                circleStrokeColor.setStroke()
+                circleColor.setFill()
+                circle.fill()
+                circle.lineWidth = circleLineWidth
+                circle.stroke()
+            }
+        }
+    }
+    
     var yMaxViewMaxDifference: CGFloat {
-        return CGFloat(self.bounds.height)/yData.max()!
+        
+        return frame.height / yData.max()!
     }
     
 }
